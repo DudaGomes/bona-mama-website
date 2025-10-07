@@ -60,7 +60,7 @@ export default function Header() {
 
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250925-WA0032-sGJKhtaOhzz2mSEgRaX2PcWjAgGTA4.jpg"
+              src="/bona-mama-sem-fundo.png"
               alt="Bona Mama Logo"
               width={120}
               height={60}

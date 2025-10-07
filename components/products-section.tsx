@@ -8,6 +8,7 @@ const categories = [
   { id: "alho", label: "Alho" },
   { id: "amendoins", label: "Amendoins" },
   { id: "frutas-secas", label: "Frutas Secas" },
+  { id: "castanhas", label: "Castanhas" },
 ]
 
 export default function ProductsSection() {
@@ -21,6 +22,8 @@ export default function ProductsSection() {
         return products.amendoins
       case "frutas-secas":
         return products.frutasSecas
+      case "castanhas":
+        return products.castanhas
       default:
         return products.amendoins
     }
