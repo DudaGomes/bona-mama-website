@@ -37,9 +37,9 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Curved slogan */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 drop-shadow-lg leading-tight">
+        {/* Curved slogan - moved down */}
+        <div className="text-center mb-12 mt-12 md:mt-20 lg:mt-28">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4 drop-shadow-[0_2px_3px_rgba(0,0,0,0.4)] leading-tight tracking-tight">
             <span className="block transform -rotate-2">O SABOR QUE LIDERA.</span>
             <span className="block transform rotate-1">O AMENDOIM QUE CONQUISTA.</span>
           </h1>

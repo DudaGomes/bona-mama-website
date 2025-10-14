@@ -1,5 +1,5 @@
 import Header from "@/components/header"
-import Hero from "@/components/hero"
+import HeroCarousel from "@/components/HeroCarousel"
 import ProductsSection from "@/components/products-section"
 import Testimonials from "@/components/testimonials"
 import InstagramGrid from "@/components/instagram-grid"
@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
       <main>
         <section id="inicio">
-          <Hero />
+          <HeroCarousel />
         </section>
         <section id="produtos">
           <ProductsSection />
