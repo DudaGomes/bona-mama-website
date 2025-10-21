@@ -122,3 +122,59 @@
 .float-animation {
   animation: float 3s ease-in-out infinite;
 }
+
+/* Neulis font fallback mapping */
+@font-face {
+  font-family: 'Neulis';
+  src: local('Neulis Bold'), local('Neulis-Bold');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Header specific styles */
+.site-header {
+  background-color: #e57600; /* brand orange */
+}
+
+.header-shadow {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.logo-overlap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.nav-underline {
+  position: relative;
+}
+.nav-underline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  bottom: -6px;
+  height: 1.5rem; /* thicker pill */
+  width: calc(100% - 8px);
+  background: white;
+  border-radius: 9999px;
+  transition: transform 160ms ease-in-out;
+  transform-origin: center;
+}
+.nav-underline:hover::after,
+.nav-underline[data-active='true']::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Drawer background */
+.mobile-drawer-backdrop {
+  background: rgba(0,0,0,0.35);
+}
+
+/* utility to apply Neulis font family */
+.font-neulis {
+  font-family: 'Neulis', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
