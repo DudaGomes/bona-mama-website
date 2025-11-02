@@ -24,11 +24,11 @@ export default function ProductCard({ product, featured = false }: ProductCardPr
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setIsModalOpen(true)}
       >
-        <div className="bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+        <div className="rounded-3xl p-6">
           <div className="relative aspect-square">
             <Image src={product.imagem || "/placeholder.svg"} alt={product.nome} fill className="object-contain" />
           </div>
-          <h3 className="text-xl font-bold text-center mt-4 text-brand-black">{product.nome}</h3>
+          <h3 className="text-xl font-bold text-center mt-4 text-brand-orange">{product.nome}</h3>
           <p className="text-center text-gray-600 mt-2">{product.peso}</p>
         </div>
       </div>

@@ -1,9 +1,10 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import ProductCard from "./product-card"
 import { products } from "@/data/products"
 import { Search } from "lucide-react"
+import { useSearchParams } from "next/navigation"
 
 const categories = [
   { id: "todos", label: "Todos" },
@@ -13,8 +14,18 @@ const categories = [
 ]
 
 export default function ProductsPage() {
+  const searchParams = useSearchParams()
+  const categoriaUrl = searchParams.get("categoria")
+  
   const [activeCategory, setActiveCategory] = useState("todos")
   const [searchQuery, setSearchQuery] = useState("")
+
+  // Set initial category from URL parameter
+  useEffect(() => {
+    if (categoriaUrl && categories.some(cat => cat.id === categoriaUrl)) {
+      setActiveCategory(categoriaUrl)
+    }
+  }, [categoriaUrl])
 
   const allProducts = useMemo(() => {
     return [...products.alhos, ...products.amendoins, ...products.frutasSecas]

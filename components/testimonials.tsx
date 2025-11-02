@@ -29,7 +29,15 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="wavy-pattern py-20 px-4">
+    <section 
+      className="wavy-pattern py-20 px-4"
+      style={{ 
+        backgroundImage: "url('/fundo.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
       <div className="container mx-auto max-w-7xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">O que dizem nossos clientes</h2>
 

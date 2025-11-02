@@ -150,23 +150,17 @@
 
 .nav-underline {
   position: relative;
+  display: inline-block;
+  transition: transform 300ms ease-in-out;
 }
-.nav-underline::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  bottom: -6px;
-  height: 1.5rem; /* thicker pill */
-  width: calc(100% - 8px);
-  background: white;
-  border-radius: 9999px;
-  transition: transform 160ms ease-in-out;
-  transform-origin: center;
+.nav-underline:hover {
+  transform: scale(1.15);
 }
-.nav-underline:hover::after,
-.nav-underline[data-active='true']::after {
-  transform: translateX(-50%) scaleX(1);
+.nav-underline[data-active='true'] {
+  transform: scale(1.05);
+}
+.nav-underline[data-active='true']:hover {
+  transform: scale(1.15);
 }
 
 /* Drawer background */
