@@ -22,7 +22,7 @@ export const heroSlides: HeroSlide[] = [
     objectScaleY: 1.0,
   },
   {
-    src: "/mais-do-que-tempero.png",
+    src: "/pagina-imagem-alho.png",
     alt: "Banner: Mais do que tempero.",
     // sem objectPosition definido -> usará 'center' por padrão
   },

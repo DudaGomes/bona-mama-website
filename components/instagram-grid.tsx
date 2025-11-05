@@ -6,23 +6,22 @@ import Image from "next/image"
 const instagramPosts = [
   {
     id: 1,
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250925-WA0035-OlwzQETzJwuKxZBbgeVOUjhOk6aNXP.jpg",
+    image: "/crocante.jpg",
     alt: "Post Instagram Bona Mama 1",
   },
   {
     id: 2,
-    image: "/amendoim-bona-mama.jpg",
+    image: "/happy-hour.png",
     alt: "Post Instagram Bona Mama 2",
   },
   {
     id: 3,
-    image: "/alho-bona-mama.jpg",
+    image: "/alho-novo.png",
     alt: "Post Instagram Bona Mama 3",
   },
   {
     id: 4,
-    image: "/frutas-secas-bona-mama.jpg",
+    image: "/sal.jpg",
     alt: "Post Instagram Bona Mama 4",
   },
 ]
@@ -34,7 +33,14 @@ export default function InstagramGrid() {
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-brand-black">Siga-nos no Instagram</h2>
-        <p className="text-center text-xl text-brand-orange font-semibold mb-12">@bonamamaoficial</p>
+        <a 
+          href="https://www.instagram.com/bonamamaoficial" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block text-center text-xl text-brand-orange font-semibold mb-12 hover:underline hover:scale-105 transition-transform duration-200"
+        >
+          @bonamamaoficial
+        </a>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {instagramPosts.map((post, index) => (
@@ -58,15 +64,19 @@ export default function InstagramGrid() {
       {/* Lightbox modal */}
       {selectedImage !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-w-4xl w-full aspect-square">
+          <div
+            className="relative max-w-2xl max-h-[85vh] w-auto h-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <Image
               src={instagramPosts[selectedImage].image || "/placeholder.svg"}
               alt={instagramPosts[selectedImage].alt}
-              fill
-              className="object-contain"
+              width={800}
+              height={800}
+              className="object-contain max-h-[85vh] w-auto h-auto rounded-lg"
             />
           </div>
         </div>

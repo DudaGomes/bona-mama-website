@@ -90,7 +90,7 @@ export const products = {
       nome: "Uva Passa Branca",
       peso: "Peso líquido 130g",
       imagem: "/uva-passa-branca-fi.png",
-      descricao: "Uvas passas brancas selecionadas, doces e suculentas.",
+      descricao: "A Uva Passa Branca Bona Mama é uma opção deliciosa e nutritiva para adoçar a rotina de forma natural. Rica em fibras, ferro e antioxidantes, contribui para o bom funcionamento do organismo e oferece energia de maneira equilibrada. Seu sabor suave e adocicado combina perfeitamente com saladas, iogurtes, granolas e sobremesas. Um toque leve e saudável que deixa qualquer momento mais saboroso.",
       categoria: "frutas-secas" as const,
       ingredientes: "Uva passa branca",
       selos: ["Sem Açúcar Adicionado", "Rico em Fibras", "Natural"],

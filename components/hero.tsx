@@ -6,7 +6,7 @@ import Image from "next/image"
 const heroSlides = [
   {
     id: 1,
-    image: "/mais-do-que-tempero.png",
+    image: "/pagina-imagem-alho.png",
     alt: "Mais do que tempero - Bona Mama",
   },
   {

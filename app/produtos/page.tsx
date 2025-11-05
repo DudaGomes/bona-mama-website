@@ -7,7 +7,16 @@ export default function Produtos() {
   return (
     <>
       <Header />
-      <main className="min-h-screen pt-24">
+      <main 
+        className="min-h-screen pt-24"
+        style={{ 
+          backgroundImage: "url('/fundo-produtos.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed"
+        }}
+      >
         <ProductsPage />
       </main>
       <Footer />
