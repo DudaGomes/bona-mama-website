@@ -18,6 +18,8 @@ export default function ContactForm() {
     e.preventDefault()
     setStatus("loading")
 
+    console.log('📤 Enviando formulário...', formData)
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -25,16 +27,21 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       })
       
-      if (response.ok) {
+      const data = await response.json()
+      console.log('📨 Resposta da API:', data)
+      
+      if (response.ok && data.success) {
+        console.log('✅ Email enviado com sucesso!')
         setStatus('success')
         setFormData({ nome: '', email: '', assunto: '', mensagem: '' })
         setTimeout(() => setStatus('idle'), 5000)
       } else {
+        console.error('❌ Erro ao enviar email:', data)
         setStatus('error')
         setTimeout(() => setStatus('idle'), 5000)
       }
     } catch (error) {
-      console.error('Erro ao enviar:', error)
+      console.error('❌ Erro crítico ao enviar:', error)
       setStatus('error')
       setTimeout(() => setStatus('idle'), 5000)
     }
@@ -60,8 +67,11 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h4 className="font-bold text-brand-black mb-1">Email</h4>
-                  <a href="mailto:sac@bonamama.com.br" className="text-brand-orange hover:underline">
+                  <a href="mailto:sac@bonamama.com.br" className="text-brand-orange hover:underline block">
                     sac@bonamama.com.br
+                  </a>
+                  <a href="mailto:nicolassilva.vendas@gmail.com" className="text-brand-orange hover:underline block">
+                    nicolassilva.vendas@gmail.com
                   </a>
                 </div>
               </div>
