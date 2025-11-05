@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
@@ -17,7 +18,9 @@ export default function Produtos() {
           backgroundAttachment: "fixed"
         }}
       >
-        <ProductsPage />
+        <Suspense fallback={<div className="container mx-auto max-w-7xl px-4 py-12 text-center">Carregando produtos...</div>}>
+          <ProductsPage />
+        </Suspense>
       </main>
       <Footer />
       <WhatsAppButton />
