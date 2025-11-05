@@ -30,7 +30,10 @@ export async function POST(request: Request) {
     const emailList = process.env.CONTACT_EMAIL?.split(',').map(e => e.trim()) || ['sac@bonamama.com.br', 'nicolassilva.vendas@gmail.com', 'likeaenderman2014@gmail.com'];
     
     console.log('🔍 Tentando enviar email...');
-    console.log('📧 Destinatários:', emailList.join(', '));
+    console.log('🌍 Ambiente:', process.env.NODE_ENV || 'development');
+    console.log('📧 CONTACT_EMAIL raw:', process.env.CONTACT_EMAIL);
+    console.log('📧 Destinatários processados:', emailList);
+    console.log('📧 Total de destinatários:', emailList.length);
     console.log('🔑 API Key configurada:', process.env.RESEND_API_KEY ? 'SIM' : 'NÃO');
     console.log('📝 Dados recebidos:', { nome, email, assunto });
 
