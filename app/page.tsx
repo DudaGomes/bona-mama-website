@@ -29,8 +29,8 @@ export default function Home() {
                 através de alimentos que unem praticidade, carinho e qualidade.
               </p>
               <p className="text-lg leading-relaxed">
-                O que nos diferencia é que não vendemos apenas alho e amendoim. Vendemos momentos de conexão, afeto e
-                bem-estar. Cada produto é pensado para transformar o simples ato de comer em uma experiência especial.
+                O que nos diferencia é que não vendemos apenas alimentos. Vendemos momentos de conexão, afeto e bem-estar.
+                Cada produto é pensado para transformar o simples ato de comer em uma experiência especial.
               </p>
               <p className="text-lg leading-relaxed">
                 Estamos sempre próximos de nossos clientes, construindo confiança a cada entrega e reforçando valores
