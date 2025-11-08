@@ -82,10 +82,20 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h4 className="font-bold text-brand-black mb-1">Telefone</h4>
-                  <a href="tel:+558699800-1330" className="text-brand-orange hover:underline block">
+                  <a 
+                    href="https://wa.me/5586998001330" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-brand-orange hover:underline block"
+                  >
                     +55 86 99800-1330
                   </a>
-                  <a href="tel:+558699924-1808" className="text-brand-orange hover:underline block">
+                  <a 
+                    href="https://wa.me/5586999241808" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-brand-orange hover:underline block"
+                  >
                     +55 86 99924-1808
                   </a>
                 </div>

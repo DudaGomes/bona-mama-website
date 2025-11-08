@@ -1,5 +1,6 @@
 export type HeroSlide = {
   src: string
+  srcMobile?: string // Imagem específica para mobile (opcional)
   alt: string
   objectPosition?: string
   objectScale?: number
@@ -10,6 +11,7 @@ export type HeroSlide = {
 export const heroSlides: HeroSlide[] = [
   {
     src: "/sabor-que-lidera-bona-mama.png",
+    srcMobile: "/sabor-que-lidera-bona-mama-mobile.png", // Adicione esta imagem otimizada para mobile
     alt: "Banner: O sabor que lidera. O amendoim que conquista.",
     // ajuste: descer levemente para mostrar a frase
     // move mais o ponto focal para baixo para que a frase fique totalmente visível
@@ -23,6 +25,7 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     src: "/pagina-imagem-alho.png",
+    srcMobile: "/pagina-imagem-alho-mobile.png", // Adicione esta imagem otimizada para mobile
     alt: "Banner: Mais do que tempero.",
     // sem objectPosition definido -> usará 'center' por padrão
   },

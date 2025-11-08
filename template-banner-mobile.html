@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Banner Mobile - Bona Mama</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .template {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .canvas {
+            width: 270px;
+            height: 480px;
+            background: #f5e9b0;
+            border: 2px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        .zone {
+            position: absolute;
+            left: 0;
+            right: 0;
+            border: 2px dashed rgba(255,0,0,0.5);
+            background: rgba(255,0,0,0.1);
+        }
+        .zone-top {
+            top: 0;
+            height: 40px;
+        }
+        .zone-bottom {
+            bottom: 0;
+            height: 40px;
+        }
+        .content-area {
+            position: absolute;
+            top: 50px;
+            left: 15px;
+            right: 15px;
+            bottom: 50px;
+            border: 2px dashed rgba(0,128,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .text-area {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d42756;
+            line-height: 1.2;
+            margin: 0;
+        }
+        .products {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        .product-placeholder {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+        }
+        .info {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .specs {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+        .label {
+            position: absolute;
+            background: rgba(255,0,0,0.8);
+            color: white;
+            padding: 2px 8px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        .label-top {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .label-bottom {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .label-content {
+            top: 50px;
+            left: 15px;
+            background: rgba(0,128,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Template 1: Layout Vertical -->
+        <div class="template">
+            <h2>📱 Layout 1: Vertical (9:16)</h2>
+            <div class="canvas">
+                <div class="zone zone-top"></div>
+                <div class="zone zone-bottom"></div>
+                <div class="label label-top">ZONA SEGURA TOPO</div>
+                <div class="label label-bottom">ZONA SEGURA RODAPÉ</div>
+                <div class="label label-content">ÁREA DE CONTEÚDO</div>
+                
+                <div class="content-area">
+                    <div class="text-area">
+                        <h1 class="title">O SABOR QUE<br>LIDERA<br>O AMENDOIM QUE<br>CONQUISTA</h1>
+                    </div>
+                    <div class="products">
+                        <div class="product-placeholder">Pacote 1</div>
+                        <div class="product-placeholder">Pacote 2</div>
+                        <div class="product-placeholder">Pacote 3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="specs">
+                <strong>Dimensões:</strong> 1080x1920px<br>
+                <strong>Proporção:</strong> 9:16<br>
+                <strong>Zona segura:</strong> 40px topo/rodapé<br>
+                <strong>Margens:</strong> 15px laterais
+            </div>
+        </div>
+
+        <!-- Template 2: Layout Instagram -->
+        <div class="template">
+            <h2>📱 Layout 2: Instagram (4:5)</h2>
+            <div class="canvas" style="height: 338px;">
+                <div class="zone zone-top"></div>
+                <div class="zone zone-bottom"></div>
+                <div class="label label-top">ZONA SEGURA TOPO</div>
+                <div class="label label-bottom">ZONA SEGURA RODAPÉ</div>
+                <div class="label label-content">ÁREA DE CONTEÚDO</div>
+                
+                <div class="content-area" style="top: 50px; bottom: 50px;">
+                    <div class="text-area">
+                        <h1 class="title" style="font-size: 16px;">O SABOR QUE<br>LIDERA</h1>
+                    </div>
+                    <div class="products" style="flex-direction: row; flex-wrap: wrap; gap: 10px;">
+                        <div class="product-placeholder" style="width: 80px; height: 80px; font-size: 10px;">Pacote 1</div>
+                        <div class="product-placeholder" style="width: 80px; height: 80px; font-size: 10px;">Pacote 2</div>
+                        <div class="product-placeholder" style="width: 80px; height: 80px; font-size: 10px;">Pacote 3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="specs">
+                <strong>Dimensões:</strong> 1080x1350px<br>
+                <strong>Proporção:</strong> 4:5<br>
+                <strong>Zona segura:</strong> 40px topo/rodapé<br>
+                <strong>Margens:</strong> 15px laterais
+            </div>
+        </div>
+
+        <!-- Guia de Zonas -->
+        <div class="template" style="max-width: 300px;">
+            <h2>📐 Guia de Zonas</h2>
+            <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; font-size: 13px;">
+                <p><strong style="color: red;">🔴 Zonas de Segurança:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>Topo: 150px (evita corte do notch)</li>
+                    <li>Rodapé: 150px (evita barra iOS)</li>
+                    <li>Laterais: 50px cada</li>
+                </ul>
+                
+                <p><strong style="color: green;">🟢 Área de Conteúdo:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>Topo: Texto principal (1/4 superior)</li>
+                    <li>Centro: Produtos (metade central)</li>
+                    <li>Rodapé: Elementos decorativos</li>
+                </ul>
+                
+                <p><strong>📏 Tamanhos de Texto:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>Título: 60-100px</li>
+                    <li>Subtítulo: 40-60px</li>
+                    <li>Corpo: mín. 30px</li>
+                </ul>
+                
+                <p><strong>🎨 Cores Bona Mama:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>Fundo: #f5e9b0</li>
+                    <li>Laranja: #f97316</li>
+                    <li>Vermelho: #d42756</li>
+                    <li>Verde: #22c55e</li>
+                </ul>
+                
+                <p><strong>💾 Exportar:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>Formato: PNG ou JPG</li>
+                    <li>Qualidade: 80-90%</li>
+                    <li>Peso máximo: 300KB</li>
+                    <li>Otimizar em TinyPNG</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="position: fixed; top: 10px; left: 10px; background: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); max-width: 300px;">
+        <strong>📋 Templates de Referência</strong>
+        <p style="font-size: 12px; margin: 5px 0;">
+            Use estes layouts como guia ao criar suas imagens mobile no Photoshop, Canva ou Figma.
+        </p>
+        <p style="font-size: 12px; margin: 5px 0;">
+            <strong>Recomendação:</strong> Layout 1 (9:16) é o mais versátil para mobile.
+        </p>
+    </div>
+</body>
+</html>

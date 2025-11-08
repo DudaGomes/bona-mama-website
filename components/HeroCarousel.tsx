@@ -26,6 +26,10 @@ export default function HeroCarousel() {
   const [paused, setPaused] = useState(false);
   const timeoutRef = useRef<number | null>(null);
   const isMd = useIsMd();
+  
+  // Swipe/touch handling for mobile
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   useEffect(() => {
     if (paused) return;
@@ -37,11 +41,42 @@ export default function HeroCarousel() {
     };
   }, [current, paused]);
 
-  // Touch events for mobile pause
+  // Touch events for mobile pause and swipe
   const handleMouseEnter = () => setPaused(true);
   const handleMouseLeave = () => setPaused(false);
-  const handleTouchStart = () => setPaused(true);
-  const handleTouchEnd = () => setPaused(false);
+  
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setPaused(true);
+    touchStartX.current = e.touches[0].clientX;
+  };
+  
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+  
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) {
+      setPaused(false);
+      return;
+    }
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50; // Distância mínima para considerar um swipe
+    
+    if (Math.abs(distance) > minSwipeDistance) {
+      if (distance > 0) {
+        // Swipe left - próximo
+        setCurrent((prev) => (prev + 1) % heroSlides.length);
+      } else {
+        // Swipe right - anterior
+        setCurrent((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+      }
+    }
+    
+    touchStartX.current = null;
+    touchEndX.current = null;
+    setPaused(false);
+  };
 
   return (
     <section
@@ -53,10 +88,14 @@ export default function HeroCarousel() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
         {heroSlides.map((slide, idx) => {
           const visible = idx === current;
+          // Usa srcMobile se existir e estiver em mobile, senão usa src padrão
+          const imageSrc = !isMd && slide.srcMobile ? slide.srcMobile : slide.src;
+          
           return (
             <div
               key={slide.src}
@@ -85,14 +124,14 @@ export default function HeroCarousel() {
                   className="relative w-full h-full"
                 >
                   <Image
-                    src={slide.src}
+                    src={imageSrc}
                     alt={slide.alt}
                     fill
                     priority={idx === 0}
                     sizes="100vw"
                     style={{
                       objectFit: "cover",
-                      objectPosition: isMd ? slide.objectPosition ?? "center" : "center",
+                      objectPosition: "center",
                     }}
                     className="w-full h-full select-none"
                     draggable={false}
